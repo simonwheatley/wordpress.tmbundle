@@ -92,6 +92,7 @@ The bundle includes snippets for some common operations we encounter during Word
 - `sidebar`&#x21E5; - Sidebar template
 - `wp-config`&#x21E5; - a full blown WP config file with all the possible options represented
 - `readme`&#x21E5; - a sample plugin readme file
+- `hook`&#x21E5; - an `add_action` or `add_filter` call, with accompanying function and comment docblock
 
 ## Actions &amp; Filters
 

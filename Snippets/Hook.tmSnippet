@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * ${12:Hooks the WP ${1:hook_name} ${2:action}} ${13}
+ *
+${9: * @param ${10} 
+}${11: * @return void
+} **/
+function ${3:prefix}_${1:hook_name}( ${8:$arg} ) {
+	$0
+}
+add_${2:action}( '${1:hook_name}', '${3:prefix}_${1:hook_name}'${4:, ${5:priority}${6:, ${7:args}}} );</string>
+	<key>name</key>
+	<string>Hook</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>hook</string>
+	<key>uuid</key>
+	<string>C3761C8F-7579-479E-887D-62D9E51A6847</string>
+</dict>
+</plist>
