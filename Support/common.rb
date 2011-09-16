@@ -780,7 +780,7 @@ module WordPress
 
 # user roles
   
-  # check against a user's capability
+  # list of all capabilities
   def self.all_caps()
     capabilities = [
       { 'display' => 'activate_plugins' },
