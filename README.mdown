@@ -106,7 +106,9 @@ There are also shortcuts for `register_style`&#x21E5; and `register_script`&#x21
 
 ## User Roles
 
-Who can ever remember all the user role levels? Now you don't have to. With `user_can`&#x21E5; you'll be presented with all the available user role levels to choose from. 
+Who can ever remember all the user role levels? Now you don't have to. With `user_can`&#x21E5; you'll be presented with all the available user role levels to choose from.
+
+Need to insert a capability somewhere? With `cap`&#x21E5; you'll be presented with all the capabilities to choose from.
 
 ## Common Variables & Settings
 

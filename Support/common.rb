@@ -780,9 +780,9 @@ module WordPress
 
 # user roles
   
-  # set a user role
-  def self.user_can()
-    choices = [
+  # check against a user's capability
+  def self.all_caps()
+    capabilities = [
       { 'display' => 'activate_plugins' },
       { 'display' => 'create_users' },
       { 'display' => 'delete_others_pages' },
@@ -827,9 +827,22 @@ module WordPress
       { 'display' => 'update_themes' },
       { 'display' => 'upload_files' }
     ]
+    return capabilities
+  end
+  
+  # check against a user's capability
+  def self.user_can()
+    choices = self.all_caps()
     TextMate::UI.complete(choices)
     ret = "current_user_can('\${1}')\$0"
     TextMate.exit_insert_snippet(ret)    
+  end
+  
+  # pick a capability from a list
+  def self.choose_cap()
+    choices = self.all_caps()
+    TextMate::UI.complete(choices)
+    TextMate.exit_insert_snippet("\${1}")    
   end
   
 # Cache
