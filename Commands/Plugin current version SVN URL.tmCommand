@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string># Gets the current SVN version URL by scraping the WP.org plugin
+# versions page.
+# 
+# Not ideal, but I'm hoping that as we're not intensive, just
+# hitting the page very very infrequently that WP.org won't mind.
+
+HTML=`curl -s -L http://wordpress.org/extend/plugins/$TM_SELECTED_TEXT/download/`
+PATTERN='&lt;a href="(http://plugins.svn.wordpress.org/[^/]+/(trunk|tags/[^/]+)/)"&gt;'
+[[ "$HTML" =~ $PATTERN ]] || exit 1
+echo ${BASH_REMATCH[1]}
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@w</string>
+	<key>name</key>
+	<string>Plugin current version SVN URL</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>tabTrigger</key>
+	<string></string>
+	<key>uuid</key>
+	<string>A1C4E1EB-3D73-47F6-9C7A-311E037BC1D8</string>
+</dict>
+</plist>
