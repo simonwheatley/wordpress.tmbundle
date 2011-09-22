@@ -14,7 +14,6 @@
 HTML=`curl -s -L http://wordpress.org/extend/plugins/$TM_SELECTED_TEXT/download/`
 PATTERN='&lt;a href="(http://plugins.svn.wordpress.org/[^/]+/(trunk|tags/[^/]+)/)"&gt;'
 [[ "$HTML" =~ $PATTERN ]] || exit 1
-
 echo ${BASH_REMATCH[1]}
 </string>
 	<key>input</key>
@@ -25,6 +24,8 @@ echo ${BASH_REMATCH[1]}
 	<string>Plugin current version SVN URL</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
+	<key>tabTrigger</key>
+	<string></string>
 	<key>uuid</key>
 	<string>A1C4E1EB-3D73-47F6-9C7A-311E037BC1D8</string>
 </dict>
