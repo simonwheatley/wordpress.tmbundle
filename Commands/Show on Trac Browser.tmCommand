@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>WP_FILEPATH=${TM_FILEPATH/$TM_PROJECT_DIRECTORY/}
+open "http://core.trac.wordpress.org/browser/trunk/${WP_FILEPATH}#L${TM_LINE_NUMBER}"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@t</string>
+	<key>name</key>
+	<string>Show on Trac Browser</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>2D72F453-25D4-4E8B-A261-349E4DD51BEA</string>
+</dict>
+</plist>
