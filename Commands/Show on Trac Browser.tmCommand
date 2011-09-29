@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string># Use the Spotlight commandline tool to find version.php… SUPER QUICKNESS!
+VERSION_PATH=`mdfind -onlyin $TM_PROJECT_DIRECTORY -name "version.php"`;
+# Get the line setting the version
+VERSION_LINE=`grep '$wp_version =' $VERSION_PATH`;
+# Detect the crazy trunk version number, which could be something like '3.3-aortic-dissection'
+if [[ $VERSION_LINE =~ [0-9]+\.[0-9]+(\.[0-9]+)?\- ]]; then # Trunk!
+	WP_VERSION='trunk';
+elif [[ $VERSION_LINE =~ [0-9]+\.[0-9]+(\.[0-9]+)? ]]; then # Regular WP Version
+	WP_VERSION="tags/${BASH_REMATCH[0]}";
+fi
+# From the path to version.php we can work out the WP root directory
+VERSION_REL_PATH='wp-includes/version.php';
+WP_ROOT=${VERSION_PATH/$VERSION_REL_PATH/};
+open "http://core.trac.wordpress.org/browser/$WP_VERSION${TM_FILEPATH/$TM_PROJECT_DIRECTORY/}#L${TM_LINE_NUMBER}";</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@t</string>
+	<key>name</key>
+	<string>Show on Trac Browser</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>2D72F453-25D4-4E8B-A261-349E4DD51BEA</string>
+</dict>
+</plist>
